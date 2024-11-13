@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pincode-Checker</title>
+  <link rel="stylesheet" href="design.css">
+</head>
+<body>
+  <div class="container visible" id="Page-1">
+    <a href="#" class="back-arrow"><img src="icons/211689_left_arrow_icon.svg" alt=""></a>
+
+    <div style="display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: start;"><p>Setting up</p>
+        <h2>Your PIN code</h2>
+        <h4 style="margin-left: 135px;">1 of 2</h4>
+    </div>
+
+    <div class="progress-bar">
+        <div class="active"></div>
+        <div></div>
+    </div>
+
+    <p style="margin-left: -20px;">To set up your <strong>PIN</strong> create a <strong>6 digit code</strong><br> <span style="margin-left: -137px;">then confirm it below</span>    
+    </p>
+
+     <p style="display: flex;
+     margin-left: 10px;
+     margin-bottom: -5px;
+     font-size: 12px;
+     font-weight: bold;">PIN CODE</p>
+
+    <div class="input-container Pincode-1">
+        <input type="text" maxlength="1" id="Digit1" oninput="moveToNext(this, 'Digit2')" onkeydown="clearAllInputs(event)">
+        <input type="text" maxlength="1" id="Digit2" oninput="moveToNext(this, 'Digit3')" onkeydown="clearAllInputs(event)">
+        <input type="text" maxlength="1" id="Digit3" oninput="moveToNext(this, 'Digit4')" onkeydown="clearAllInputs(event)">
+        <input type="text" maxlength="1" id="Digit4" oninput="moveToNext(this, 'Digit5')" onkeydown="clearAllInputs(event)">
+        <input type="text" maxlength="1" id="Digit5" oninput="moveToNext(this, 'Digit6')" onkeydown="clearAllInputs(event)">
+        <input type="text" maxlength="1" id="Digit6" oninput="moveToNext(this)" onkeydown="clearAllInputs(event)">
+    </div>
+
+    <p style="display: flex;
+    margin-left: 10px;
+    margin-bottom: -5px;
+    font-size: 12px;
+    font-weight: bold;">CONFIRM YOUR PIN CODE</p>
+
+    <div class="input-container hidden-input Pincode-2">
+        <input type="text" maxlength="1" id="digit1" oninput="moveToNext(this, 'digit2')" onkeydown="clearAllInputs(event)">
+        <input type="text" maxlength="1" id="digit2" oninput="moveToNext(this, 'digit3')" onkeydown="clearAllInputs(event)">
+        <input type="text" maxlength="1" id="digit3" oninput="moveToNext(this, 'digit4')" onkeydown="clearAllInputs(event)">
+        <input type="text" maxlength="1" id="digit4" oninput="moveToNext(this, 'digit5')" onkeydown="clearAllInputs(event)">
+        <input type="text" maxlength="1" id="digit5" oninput="moveToNext(this, 'digit6')" onkeydown="clearAllInputs(event)">
+        <input type="text" maxlength="1" id="digit6" oninput="validatePincode()" onkeydown="clearAllInputs(event)">
+    </div>
+
+    <!-- <p class="confirmation-message">Your PIN codes are the same ✓</p> -->
+    <div id="result"></div>
+
+    <button class="continue-button">CONTINUE</button>
+  </div>
+
+  <div class="Page-2 hidden" id="Next-page">
+    <a href="#" class="back-arrow Arrow-button"><img src="icons/211689_left_arrow_icon.svg" alt=""></a>
+
+    <div style="display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: start;">
+        <p>Setting up</p>
+        <h2>Your PIN code</h2>
+        <h4 style="margin-left: 140px;">2 of 2</h4>
+    </div>
+
+    <div class="progress-bar">
+        <div class="active"></div>
+        <div class="active"></div>
+    </div>
+
+    <div>
+      <h3 style="margin-left: 70px;">Your Pincode Area is</h3>
+      <h1 style="margin-left: 70px;">&#10549;</h1>
+    </div>
+
+    <div class="location-box">
+      <div id="location1"></div>
+      <div id="location2"></div>
+      <div id="location3"></div>
+      <div id="location4"></div>
+      <div id="location5"></div>
+    </div>
+
+  </div>
+
+  <script src="functional.js"></script>
+</body>
+</html>
